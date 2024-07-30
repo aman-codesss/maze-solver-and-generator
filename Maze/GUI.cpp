@@ -1,12 +1,13 @@
+#include "AStarSolver.h"
 #include "GUI.h"
 
 GUI::GUI(int width, int height)
     : window(sf::VideoMode(width, height), "Maze Generator and Solver"),
     maze(15, 15), solver(maze), mazeSize(15) {
-    if (!font.loadFromFile("E:/vs/Maze/Maze/arial.ttf")) {
+    if (!font.loadFromFile("C:/Users/Asus/Desktop/maze/Maze/arial.ttf")) {
         // Handle error
     }
-    if (!wallTexture.loadFromFile("E:/vs/Maze/Maze/grass.png")) {
+    if (!wallTexture.loadFromFile("C:/Users/Asus/Desktop/maze/Maze/grass.png")) {
         // Handle error
     }
     initializeGUI();
@@ -59,6 +60,7 @@ void GUI::run() {
         handleEvents();
         window.clear();
         maze.draw(window, wallTexture);
+        solver.drawSolution(window);//added lines of claude code
         window.draw(generateMazeButton);
         window.draw(aStarButton);
         window.draw(mazeSizeLabel);

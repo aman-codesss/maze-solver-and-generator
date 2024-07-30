@@ -10,7 +10,7 @@ public:
     Maze(int width, int height);
     void generateAnimated(sf::RenderWindow& window, const sf::Texture& wallTexture);
     void draw(sf::RenderWindow& window, const sf::Texture& wallTexture);
-
+    Cell& getCell(int x, int y) { return grid[y][x]; }//added lines from claude
     int width, height;
     std::vector<std::vector<Cell>> grid;
 

@@ -14,7 +14,7 @@ public:
 private:
     sf::RenderWindow window;
     Maze maze;
-    AStarSolver solver;
+    AStarSolver solver;//already there claude askmed to add so stupid
     sf::Font font;
     sf::Text generateMazeButton;
     sf::Text aStarButton;
